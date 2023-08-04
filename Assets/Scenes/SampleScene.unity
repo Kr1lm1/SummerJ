@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 48487651}
   - component: {fileID: 48487650}
+  - component: {fileID: 48487653}
+  - component: {fileID: 48487652}
   m_Layer: 0
   m_Name: Sprites_11
   m_TagString: Untagged
@@ -207,6 +209,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &48487652
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48487649}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.25758836, y: -1.561362}
+  serializedVersion: 2
+  m_Radius: 0.5915618
+--- !u!114 &48487653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48487649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9132ef5d7ad27e49b08a731057a3827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatick: 1
+  Offset: 1.3
 --- !u!1 &161701467
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +273,8 @@ GameObject:
   - component: {fileID: 161701473}
   - component: {fileID: 161701476}
   - component: {fileID: 161701477}
+  - component: {fileID: 161701478}
+  - component: {fileID: 161701479}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -290,7 +343,7 @@ Transform:
   m_GameObject: {fileID: 161701467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4511719, y: 0.49689344, z: 0}
+  m_LocalPosition: {x: -2.451172, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -308,7 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601211bb400f4214cbbf1fdee5229481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
+  Anim: {fileID: 161701479}
 --- !u!58 &161701474
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -397,6 +451,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3038891085763877121, guid: a04f6ceeb7532674cb7755c6a45eb7ad, type: 3}
+--- !u!114 &161701478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161701467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9132ef5d7ad27e49b08a731057a3827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatick: 0
+  Offset: 0
+--- !u!95 &161701479
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161701467}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 711a4c5c236bb164d8e69c55e7ac9384, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &896307570
 GameObject:
   m_ObjectHideFlags: 3
@@ -550,7 +639,7 @@ Transform:
   m_GameObject: {fileID: 1166244732}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4511719, y: 0.49689344, z: -10}
+  m_LocalPosition: {x: -2.451172, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -644,7 +733,7 @@ Transform:
   m_GameObject: {fileID: 1380907968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4511719, y: 0.49689344, z: -10}
+  m_LocalPosition: {x: -2.451172, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -694,6 +783,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1389653177}
   - component: {fileID: 1389653176}
+  - component: {fileID: 1389653179}
+  - component: {fileID: 1389653178}
   m_Layer: 0
   m_Name: Sprites_3
   m_TagString: Untagged
@@ -768,6 +859,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389653178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389653175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9132ef5d7ad27e49b08a731057a3827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatick: 1
+  Offset: 1.3
+--- !u!58 &1389653179
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389653175}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06039753, y: -1.4727789}
+  serializedVersion: 2
+  m_Radius: 0.3418719
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
