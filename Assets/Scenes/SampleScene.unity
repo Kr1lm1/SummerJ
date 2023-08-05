@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 161701477}
   - component: {fileID: 161701478}
   - component: {fileID: 161701479}
+  - component: {fileID: 161701480}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -486,6 +487,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &161701480
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161701467}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01001817, y: 0}
+  m_Size: {x: 1.7380465, y: 2.87}
+  m_Direction: 0
 --- !u!1 &661061724
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +535,7 @@ GameObject:
   - component: {fileID: 661061727}
   - component: {fileID: 661061726}
   - component: {fileID: 661061725}
+  - component: {fileID: 661061730}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -648,6 +685,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &661061730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661061724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc136c8ea3c388479f8b1c544b9d745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &896307570
 GameObject:
   m_ObjectHideFlags: 3
