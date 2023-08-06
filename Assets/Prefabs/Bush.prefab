@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5851743316698781241}
   - component: {fileID: 3014404765502737012}
   - component: {fileID: 3995502462966851682}
+  - component: {fileID: -619361657792014384}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -120,3 +121,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.41}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &-619361657792014384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151812763198680295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9132ef5d7ad27e49b08a731057a3827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatick: 1
+  Offset: 0.1
