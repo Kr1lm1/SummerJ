@@ -10,12 +10,13 @@ public class PlayerHearts : MonoBehaviour
     [SerializeField] private GameObject DeadPanel;
     [SerializeField] private GameObject GamePanel;
     [SerializeField] private GameObject PausePanel;
+    [SerializeField] private int _time;
 
     private float hearts = 3f;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionStay2d(Collision collision)
     {
-        if(collision.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy")
         {
             hearts--;
         }
@@ -23,7 +24,12 @@ public class PlayerHearts : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (hearts == 3)
+        _time -= Time.fixedDeltaTime;
+            if (_time <= 0)
+        {
+
+        }
+            if (hearts == 3)
         {
             Heart.SetActive(true);
             Heart1.SetActive(true);

@@ -683,6 +683,8 @@ MonoBehaviour:
   Right: {fileID: 1262037310, guid: 4e3bce00d61b81447b07b777c2d0523c, type: 3}
   Up: {fileID: -1647735819, guid: 4e3bce00d61b81447b07b777c2d0523c, type: 3}
   Down: {fileID: 1969601591, guid: 4e3bce00d61b81447b07b777c2d0523c, type: 3}
+  Arms: {fileID: 0}
+  NArm: {fileID: 0}
 --- !u!1 &412284495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,13 +1753,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObjects:
   - prefab: {fileID: 6151812763198680295, guid: ed17773891085f3468300f428b308f1f, type: 3}
-    rarity: 0.5
+    rarity: 0.15
   - prefab: {fileID: 5800864362630096542, guid: 040db6b8f31ef8745bb3b0132b878ff7, type: 3}
-    rarity: 0.4
+    rarity: 0.2
   - prefab: {fileID: 6058337452199002344, guid: fe567318fdac3a6489ce1f757de17cb2, type: 3}
     rarity: 0.1
   spawnRadius: 200
-  maxSpawnAttempts: 10000
+  maxSpawnAttempts: 3000
 --- !u!4 &873190002
 Transform:
   m_ObjectHideFlags: 0
