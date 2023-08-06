@@ -490,7 +490,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  Anim: {fileID: 161701479}
 --- !u!50 &161701475
 Rigidbody2D:
   serializedVersion: 4
@@ -679,12 +678,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17544db01a65c2546abf5b7bb96637ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Left: {fileID: 1262037310, guid: 4e3bce00d61b81447b07b777c2d0523c, type: 3}
-  Right: {fileID: 1262037310, guid: 4e3bce00d61b81447b07b777c2d0523c, type: 3}
+  Left: {fileID: 1969601591, guid: 4e3bce00d61b81447b07b777c2d0523c, type: 3}
+  Right: {fileID: 1969601591, guid: 4e3bce00d61b81447b07b777c2d0523c, type: 3}
   Up: {fileID: -1647735819, guid: 4e3bce00d61b81447b07b777c2d0523c, type: 3}
   Down: {fileID: 1969601591, guid: 4e3bce00d61b81447b07b777c2d0523c, type: 3}
-  Arms: {fileID: 0}
-  NArm: {fileID: 0}
 --- !u!1 &412284495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,7 +1756,7 @@ MonoBehaviour:
   - prefab: {fileID: 6058337452199002344, guid: fe567318fdac3a6489ce1f757de17cb2, type: 3}
     rarity: 0.1
   spawnRadius: 200
-  maxSpawnAttempts: 3000
+  maxSpawnAttempts: 5000
 --- !u!4 &873190002
 Transform:
   m_ObjectHideFlags: 0
@@ -1769,7 +1766,7 @@ Transform:
   m_GameObject: {fileID: 873190000}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.977485, y: -2.9421246, z: 0.76559305}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

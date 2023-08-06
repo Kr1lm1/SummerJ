@@ -30,7 +30,7 @@ public class SpawnController : MonoBehaviour
             bool canSpawn = true;
             foreach (var collider in colliders)
             {
-                if (collider.CompareTag("Obstacle") || collider.CompareTag("SpawnedObject"))
+                if (collider.CompareTag("Untagged") || collider.CompareTag("Enemy"))
                 {
                     canSpawn = false;
                     break;
@@ -49,7 +49,6 @@ public class SpawnController : MonoBehaviour
                     if (randomRarity <= cumulativeRarity)
                     {
                         GameObject spawnedObject = Instantiate(spawnObject.prefab, spawnPosition, Quaternion.identity);
-                        spawnedObject.tag = "SpawnedObject";
                         break;
                     }
                 }

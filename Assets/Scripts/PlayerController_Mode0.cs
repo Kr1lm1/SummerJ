@@ -5,12 +5,10 @@ public class PlayerController_Mode0 : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D rb;
     private Vector2 direction;
-    [SerializeField] private Animator Anim;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -19,10 +17,6 @@ public class PlayerController_Mode0 : MonoBehaviour
         {
             direction.x = Input.GetAxisRaw("Horizontal");
             direction.y = Input.GetAxisRaw("Vertical");
-
-            Anim.SetFloat("Horizontal", direction.x);
-            Anim.SetFloat("Vertical", direction.y);
-            Anim.SetFloat("Speed", direction.sqrMagnitude);
         }
     }
 
