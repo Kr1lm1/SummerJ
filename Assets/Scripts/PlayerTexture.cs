@@ -11,6 +11,7 @@ public class PlayerTexture : MonoBehaviour
     [SerializeField] private Sprite DownTurelSprite;
 
     [SerializeField] private GameObject Arms;
+    [SerializeField] private GameObject TurelButtons;
 
     void Update()
     {
@@ -21,25 +22,33 @@ public class PlayerTexture : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = Left;
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 Arms.SetActive(false);
+                TurelButtons.SetActive(false);
             }
             else if (Input.GetKeyDown("d") || Input.GetKeyDown("right"))
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = Left;
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
                 Arms.SetActive(false);
+                TurelButtons.SetActive(false);
             }
             else if (Input.GetKeyDown("w") || Input.GetKeyDown("up"))
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = Up;
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 Arms.SetActive(true);
+                TurelButtons.SetActive(false);
             }
             else if (Input.GetKeyDown("s") || Input.GetKeyDown("down"))
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = Down;
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 Arms.SetActive(true);
+                TurelButtons.SetActive(false);
             }
+        }
+        else if (gameObject.GetComponent<PlayerTransformation>().PlayerMode == 1)
+        {
+            TurelButtons.SetActive(true);
         }
     }
 

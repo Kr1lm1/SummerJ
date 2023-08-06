@@ -1,62 +1,27 @@
 using UnityEngine;
 
-[System.Serializable]
-public class SpawnObject
+public class ZombieSpawner : MonoBehaviour
 {
-    public GameObject prefab;
-    public float rarity;
-}
-
-public class SpawnController : MonoBehaviour
-{
-    public SpawnObject[] spawnObjects;
-    public float spawnRadius;
-    public int maxSpawnAttempts = 10;
+    [SerializeField] private GameObject zombiePrefab; // Префаб зомби
+    [SerializeField] private float spawnRadius = 5f; // Радиус окружности, на которой будут спавниться зомби
+    [SerializeField] private float spawnInterval = 1f; // Интервал спавна зомби (в секундах)
 
     private void Start()
     {
-        SpawnObjectsInRadius();
+        // Начинаем спавнить зомби с заданным интервалом
+        InvokeRepeating("SpawnZombie", 0f, spawnInterval);
     }
 
-    private void SpawnObjectsInRadius()
+    private void SpawnZombie()
     {
-        for (int i = 0; i < maxSpawnAttempts; i++)
-        {
-            Vector2 randomPosition = Random.insideUnitCircle * spawnRadius;
-            Vector3 spawnPosition = new Vector3(randomPosition.x, randomPosition.y, 0f);
+        // Генерируем случайный угол в радианах
+        float angle = Random.Range(0f, Mathf.PI * 2f);
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPosition, 0.5f);
+        // Вычисляем координаты спавна зомби на окружности
+        float x = transform.position.x + spawnRadius * Mathf.Cos(angle);
+        float y = transform.position.y + spawnRadius * Mathf.Sin(angle);
 
-            bool canSpawn = true;
-            foreach (var collider in colliders)
-            {
-                if (collider.CompareTag("Untagged") || collider.CompareTag("Enemy"))
-                {
-                    canSpawn = false;
-                    break;
-                }
-            }
-
-            if (canSpawn)
-            {
-                float randomRarity = Random.Range(0f, 1f);
-                float cumulativeRarity = 0f;
-
-                foreach (var spawnObject in spawnObjects)
-                {
-                    cumulativeRarity += spawnObject.rarity;
-
-                    if (randomRarity <= cumulativeRarity)
-                    {
-                        GameObject spawnedObject = Instantiate(spawnObject.prefab, spawnPosition, Quaternion.identity);
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                i--; // Retry the spawn if it was unsuccessful
-            }
-        }
+        // Создаем зомби и размещаем его на рассчитанных координатах
+        Instantiate(zombiePrefab, new Vector3(x, y, 0f), Quaternion.identity);
     }
 }
