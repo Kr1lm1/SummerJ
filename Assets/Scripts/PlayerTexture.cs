@@ -3,27 +3,80 @@ using UnityEngine;
 public class PlayerTexture : MonoBehaviour
 {
     [SerializeField] private Sprite Left;
-    [SerializeField] private Sprite Right;
     [SerializeField] private Sprite Up;
     [SerializeField] private Sprite Down;
 
+    [SerializeField] private Sprite LeftTurelSprite;
+    [SerializeField] private Sprite UpTurelSprite;
+    [SerializeField] private Sprite DownTurelSprite;
+
+    [SerializeField] private GameObject Arms;
+
     void Update()
     {
-        if (Input.GetKeyDown("a"))
+        if (gameObject.GetComponent<PlayerTransformation>().PlayerMode == 0)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = Left;  
+            if (Input.GetKeyDown("a") || Input.GetKeyDown("left"))
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = Left;
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                Arms.SetActive(false);
+            }
+            else if (Input.GetKeyDown("d") || Input.GetKeyDown("right"))
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = Left;
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                Arms.SetActive(false);
+            }
+            else if (Input.GetKeyDown("w") || Input.GetKeyDown("up"))
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = Up;
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                Arms.SetActive(true);
+            }
+            else if (Input.GetKeyDown("s") || Input.GetKeyDown("down"))
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = Down;
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                Arms.SetActive(true);
+            }
         }
-        else if (Input.GetKeyDown("d"))
+    }
+
+    public void LeftTurel()
+    {
+        if (gameObject.GetComponent<PlayerTransformation>().PlayerMode == 1)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = Right;
+            gameObject.GetComponent<SpriteRenderer>().sprite = LeftTurelSprite;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            Arms.SetActive(false);
         }
-        else if (Input.GetKeyDown("w"))
+    }
+    public void RightTurel()
+    {
+        if (gameObject.GetComponent<PlayerTransformation>().PlayerMode == 1)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = Up;
+            gameObject.GetComponent<SpriteRenderer>().sprite = LeftTurelSprite;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            Arms.SetActive(false);
         }
-        else if (Input.GetKeyDown("s"))
+    }
+    public void DownTurel()
+    {
+        if (gameObject.GetComponent<PlayerTransformation>().PlayerMode == 1)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = Down;
+            gameObject.GetComponent<SpriteRenderer>().sprite = DownTurelSprite;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            Arms.SetActive(false);
+        }
+    }
+    public void UpTurel()
+    {
+        if (gameObject.GetComponent<PlayerTransformation>().PlayerMode == 1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = UpTurelSprite;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            Arms.SetActive(false);
         }
     }
 }
