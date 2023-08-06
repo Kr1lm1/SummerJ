@@ -21,6 +21,14 @@ public class PlayerHearts : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            hearts = 0;
+        }
+    }
+
     private void FixedUpdate()
     {
         if (hearts == 3)
